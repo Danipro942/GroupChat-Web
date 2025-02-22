@@ -1,7 +1,7 @@
 import style from "./style.module.css";
 type Props = {};
 
-const WelcomeChat = (props: Props) => {
+const WelcomeChat = ({}: Props) => {
   return (
     <div className={style.welcomeChat}>
       <img src="https://www.svgrepo.com/show/6995/chat.svg" alt="" />

@@ -1,24 +1,24 @@
-import { useForm } from "react-hook-form";
-import style from "../../../pages/Auth/style.module.css";
-import { useNavigate } from "react-router-dom";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { AxiosError } from "axios";
 import { jwtDecode } from "jwt-decode";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { UserContext } from "../../../Context/userContext";
 import {
   RegisterForm,
   RegisterFormSchema,
 } from "../../../Schemas/RegisterForm";
-import { zodResolver } from "@hookform/resolvers/zod";
 import useRegister from "../../../api/useRegister";
+import style from "../../../pages/Auth/style.module.css";
+import { ErrorResponse, UserType } from "../../../types/user";
 import { setSession } from "../../../utils/SessionStorage";
 import { isAuth } from "../../../utils/isAuth";
-import { toast } from "react-toastify";
-import { AxiosError } from "axios";
-import { ErrorResponse, UserType } from "../../../types/user";
-import { useContext } from "react";
-import { UserContext } from "../../../Context/userContext";
 
 type Props = {};
 
-const Register = (props: Props) => {
+const Register = ({}: Props) => {
   const { setUser } = useContext(UserContext);
   const { mutate } = useRegister();
 

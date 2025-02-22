@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
-import openSocket from "socket.io-client";
-import "./App.css";
-import DragZone from "./Components/DragZone";
-import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import "./App.css";
 
 function App() {
   type FileWithPreview = File & { preview: string };
 
   const { handleSubmit } = useForm();
 
-  const [file, setFile] = useState<FileWithPreview[]>([]);
+  const [file] = useState<FileWithPreview[]>([]);
 
   const onSubmit = async () => {
     try {

@@ -1,10 +1,10 @@
-import { CircleSpinner, ClapSpinner } from "react-spinners-kit";
+import { useContext, useState } from "react";
+import { CircleSpinner } from "react-spinners-kit";
+import apiClient from "../../../../api/apiClient";
+import { ChatsContext } from "../../../../Context/ChatsContext";
+import { ChatType, SearchUserType } from "../../../../types/user";
 import style from "./style.module.css";
 import UserFound from "./UserFound";
-import { useContext, useState } from "react";
-import apiClient from "../../../../api/apiClient";
-import { ChatType, SearchUserType } from "../../../../types/user";
-import { ChatsContext } from "../../../../Context/ChatsContext";
 
 type Props = {
   handleModel: (open: boolean) => void;

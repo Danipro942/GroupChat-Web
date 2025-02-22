@@ -1,5 +1,4 @@
-import apiClient from "../../../../../api/apiClient";
-import { Chat, SearchUserType } from "../../../../../types/user";
+import { SearchUserType } from "../../../../../types/user";
 
 type Props = {
   data: SearchUserType;

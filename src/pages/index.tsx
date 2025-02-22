@@ -1,24 +1,23 @@
+import { jwtDecode } from "jwt-decode";
+import { useContext, useEffect, useState } from "react";
 import {
+  Navigate,
   RouterProvider,
   createBrowserRouter,
-  Navigate,
 } from "react-router-dom";
-import Home from "./Home/Home";
-import Auth from "./Auth";
+import { RotateSpinner } from "react-spinners-kit";
 import Login from "../Components/Auth/Login";
 import Register from "../Components/Auth/Register";
-import { useContext, useEffect, useState } from "react";
 import { isAuth } from "../utils/isAuth";
-import { PushSpinner, RotateSpinner } from "react-spinners-kit";
-import { jwtDecode } from "jwt-decode";
-import { Socket, io } from "socket.io-client";
+import Auth from "./Auth";
+import Home from "./Home/Home";
 
+import ForgotPassword from "../Components/Password/ForgotPassword";
+import NewPassowrd from "../Components/Password/NewPassword";
 import { UserContext } from "../Context/userContext";
+import { useSocket } from "../Socket/SocketContext";
 import { UserType } from "../types/user";
 import { getSession } from "../utils/SessionStorage";
-import { useSocket } from "../Socket/SocketContext";
-import NewPassowrd from "../Components/Password/NewPassword";
-import ForgotPassword from "../Components/Password/ForgotPassword";
 
 const AppRouter = () => {
   const { socket } = useSocket();

@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from "react";
-import { ChatType, UserType } from "../../../types/user";
-import style from "../style.module.css";
+import { useContext } from "react";
 import { UserContext } from "../../../Context/userContext";
 import { SelectContext } from "../../../Context/useSelectContext";
-import { useSocket } from "../../../Socket/SocketContext";
+import { ChatType, UserType } from "../../../types/user";
+import style from "../style.module.css";
 type Props = {
   userFetch: UserType[];
   onSelected: (data: UserType) => void;
@@ -11,10 +10,8 @@ type Props = {
 };
 
 const Chat = ({ userFetch, onSelected, chat }: Props) => {
-  const [message, setMessage] = useState<string>();
   const { user } = useContext(UserContext);
   const { userSelected } = useContext(SelectContext);
-  const { socket } = useSocket();
 
   if (!user) return null;
 
@@ -36,7 +33,9 @@ const Chat = ({ userFetch, onSelected, chat }: Props) => {
         <div className={style.profileImg}>
           <img
             src={
-              filterUser?.profilePicture || "https://hips.hearstapps.com/hmg-prod/images/Diana_GettyImages-515185764.jpg?crop=1xw:1.0xh;center,top&resize=640:*"}
+              filterUser?.profilePicture ||
+              "https://hips.hearstapps.com/hmg-prod/images/Diana_GettyImages-515185764.jpg?crop=1xw:1.0xh;center,top&resize=640:*"
+            }
             alt=""
           />
         </div>

@@ -11,11 +11,11 @@ type FileWithPreview = File & { preview: string };
 
 const DragZone = ({ file, setFile }: Props) => {
   console.log(file);
-  const onDrop = useCallback((acceptedFiles: File[], rejectedFiles: File[]) => {
+  const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
 
     if (acceptedFiles.length) {
-      setFile((previusFile) => [
+      setFile(() => [
         ...acceptedFiles.map((file) =>
           Object.assign(file, { preview: URL.createObjectURL(file) })
         ),
@@ -25,7 +25,7 @@ const DragZone = ({ file, setFile }: Props) => {
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop: (acceptedFiles, rejectedFiles) => {
+    onDrop: (acceptedFiles) => {
       const newFiles = acceptedFiles.filter(
         (newFile) =>
           !file.some(
@@ -33,7 +33,7 @@ const DragZone = ({ file, setFile }: Props) => {
               existingFile.name === newFile.name
           )
       );
-      onDrop(newFiles, rejectedFiles);
+      onDrop(newFiles);
     },
     accept: {
       "image/*": [],

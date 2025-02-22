@@ -1,13 +1,13 @@
-import { useForm } from "react-hook-form";
-import { NewPasswordForm } from "../../../Schemas/NewPasswordForm";
 import { zodResolver } from "@hookform/resolvers/zod";
-import style from "./style.module.css";
+import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
-import apiClient from "../../../api/apiClient";
 import { toast } from "react-toastify";
+import apiClient from "../../../api/apiClient";
+import { NewPasswordForm } from "../../../Schemas/NewPasswordForm";
+import style from "./style.module.css";
 type Props = {};
 
-const NewPassowrd = (props: Props) => {
+const NewPassowrd = ({}: Props) => {
   const {
     register,
     handleSubmit,

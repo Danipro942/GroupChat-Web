@@ -1,16 +1,15 @@
+import axios from "axios";
 import { useContext, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { UserContext } from "../../../../Context/userContext";
 import apiClient from "../../../../api/apiClient";
-import DragZone from "../../../DragZone";
-import style from "./style.module.css";
-import axios from "axios";
 import { getSession, setSession } from "../../../../utils/SessionStorage";
+import style from "./style.module.css";
 type Props = {
   handleModel: (open: boolean) => void;
 };
 
-const SettingUserModal = ({ handleModel }: Props) => {
+const SettingUserModal = ({}: Props) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const { user, setUser } = useContext(UserContext);
@@ -41,7 +40,6 @@ const SettingUserModal = ({ handleModel }: Props) => {
   };
 
   const ChangeProfilePicture = async () => {
-    const URL = "/user/profilepicture";
     setIsLoading(true);
     console.log(formData);
     // Si solo se espera un archivo, usamos el primero del array.

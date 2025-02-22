@@ -16,11 +16,10 @@ import { Messages } from "../../types/message";
 import IsLoading from "../isLoading";
 import Message from "./Message";
 import WelcomeChat from "./WelcomeChat";
-import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
-const Chat = (props: Props) => {
+const Chat = ({}: Props) => {
   const [messages, setMessages] = useState<Messages[]>([]);
   const { userSelected } = useContext(SelectContext);
   const [isAutoScroll, setIsAutoScroll] = useState(true);
@@ -37,12 +36,7 @@ const Chat = (props: Props) => {
 
   const { data, isFetching } = MessagesUser(userSelected?.username || "");
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<sendMessageForm>({
+  const { register, handleSubmit, reset } = useForm<sendMessageForm>({
     resolver: zodResolver(sendMessageSchema),
   });
 
@@ -91,7 +85,7 @@ const Chat = (props: Props) => {
     try {
       const URL = `/user/message`;
 
-      const response = apiClient.put(URL, {
+      apiClient.put(URL, {
         receipterUser: userSelected?.username,
         text: data.message,
       });
@@ -103,10 +97,7 @@ const Chat = (props: Props) => {
 
     if (socket) {
       console.log(user);
-      const sendMessage = {
-        username: user,
-        message: data.message,
-      };
+
       socket.emit("private_message", {
         to: userSelected?.username,
         message: data.message,

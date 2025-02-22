@@ -8,7 +8,7 @@ import { Bounce, ToastContainer } from "react-toastify";
 
 type Props = {};
 
-const Home = (props: Props) => {
+const Home = ({}: Props) => {
   useEffect(() => {
     openSocket("danisthchat-production.up.railway.app");
   }, []);

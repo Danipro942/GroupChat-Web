@@ -1,9 +1,9 @@
-import style from "./style.module.css";
 import { CircleSpinner } from "react-spinners-kit";
+import style from "./style.module.css";
 
 type Props = {};
 
-const IsLoading = (props: Props) => {
+const IsLoading = ({}: Props) => {
   return (
     <div className={style.isLoading}>
       {" "}

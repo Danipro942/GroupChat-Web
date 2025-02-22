@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
-import { ChatType, UserType } from "../types/user";
+import { ChatType } from "../types/user";
 
 type Props = {
   children: ReactNode;

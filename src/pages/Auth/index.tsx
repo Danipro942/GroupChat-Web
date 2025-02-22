@@ -4,7 +4,7 @@ import { Bounce, ToastContainer } from "react-toastify";
 
 type Props = {};
 
-const Auth = (props: Props) => {
+const Auth = ({}: Props) => {
   return (
     <div className={style.container}>
       <div className={style.authContainer}>

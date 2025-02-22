@@ -1,25 +1,24 @@
 import { useContext, useEffect, useState } from "react";
-import Chat from "./Chat";
-import style from "./style.module.css";
-import { UserContext } from "../../Context/userContext";
-import { MdAddComment } from "react-icons/md";
-import ModalComponent from "../Modal";
-import SearchUser from "./Modal/SearchUser";
-import apiClient from "../../api/apiClient";
-import { ChatType, UserType } from "../../types/user";
-import { CircleSpinner } from "react-spinners-kit";
-import { SelectContext } from "../../Context/useSelectContext";
-import { Messages } from "../../types/message";
-import { useSocket } from "../../Socket/SocketContext";
-import { deleteSession } from "../../utils/SessionStorage";
-import { useNavigate } from "react-router-dom";
-import { ChatsContext } from "../../Context/ChatsContext";
 import { IoIosSettings } from "react-icons/io";
+import { MdAddComment } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { CircleSpinner } from "react-spinners-kit";
+import apiClient from "../../api/apiClient";
+import { ChatsContext } from "../../Context/ChatsContext";
+import { UserContext } from "../../Context/userContext";
+import { SelectContext } from "../../Context/useSelectContext";
+import { useSocket } from "../../Socket/SocketContext";
+import { ChatType, UserType } from "../../types/user";
+import { deleteSession } from "../../utils/SessionStorage";
+import ModalComponent from "../Modal";
+import Chat from "./Chat";
+import SearchUser from "./Modal/SearchUser";
 import SettingUserModal from "./Modal/SettingUserModal";
+import style from "./style.module.css";
 
 type Props = {};
 
-const ChatContainer = (props: Props) => {
+const ChatContainer = ({}: Props) => {
   const [searchUseropen, setSearchUseropen] = useState(false);
   const [settingUser, setSettingUser] = useState(false);
   const [filterUser, setFilterUser] = useState<string>("");

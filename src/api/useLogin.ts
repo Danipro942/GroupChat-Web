@@ -1,7 +1,6 @@
 import axios, {AxiosError} from 'axios'
 import { UserToken } from '../types/user'
 import {useMutation} from '@tanstack/react-query'
-import { data } from 'react-router-dom'
 
 
 type LoginUser = {

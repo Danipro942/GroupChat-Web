@@ -9,7 +9,7 @@ export const isAuth =async () => {
     const URL = `/auth/verify/${getSession()}`;
 
     try {
-        const reponse = await apiClient.get<{verifyToken: boolean}>(URL);
+         await apiClient.get<{verifyToken: boolean}>(URL);
         return true
     } catch (error) {
         return false

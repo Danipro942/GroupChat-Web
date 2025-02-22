@@ -1,18 +1,14 @@
-import { useForm } from "react-hook-form";
-import { NewPasswordForm } from "../../../Schemas/NewPasswordForm";
-import { zodResolver } from "@hookform/resolvers/zod";
-import style from "./style.module.css";
-import { useNavigate, useParams } from "react-router-dom";
-import apiClient from "../../../api/apiClient";
-import { toast } from "react-toastify";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import apiClient from "../../../api/apiClient";
+import style from "./style.module.css";
 type Props = {};
 
-const ForgotPassword = (props: Props) => {
+const ForgotPassword = ({}: Props) => {
   const [email, setEmail] = useState<string>("");
   const navigate = useNavigate();
 
-  const { token } = useParams<{ token: string }>();
   const onSubmit = async (e: any) => {
     e.preventDefault();
     const URL = `/auth/resetPassword`;

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "serve dist -s -n -L -p $PORT",
+    "start": "serve dist -s -n -L -p 5173",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

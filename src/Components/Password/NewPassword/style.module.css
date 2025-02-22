@@ -1,0 +1,25 @@
+.newPasswordContainer{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.newPasswordContainer input {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    padding: 0 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+
+    
+}
+
+.newPasswordContainer label {
+    margin-right: auto;
+}

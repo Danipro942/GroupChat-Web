@@ -1,0 +1,175 @@
+.chat {
+  width: 100%;
+}
+
+.chat__header {
+  background-color: var(--primary-color);
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chat__header span {
+  font-weight: 600;
+}
+
+.chat__header i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.chat__messages_wrapper {
+  position: relative;
+  /* height: 85%; */
+  height: 80%;
+
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  
+  display: flex; /* Agregado */
+  flex-direction: column; /* Agregado, para que los mensajes se apilen verticalmente */
+  /* Puedes agregar align-items: stretch o leave it as default */
+}
+
+.chat__messages_wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://camo.githubusercontent.com/ebf18cd85f7aa9dc79fb74c58dc94febf3a6441d8d689cd5a400b2707e19ec0e/68747470733a2f2f7765622e77686174736170702e636f6d2f696d672f62672d636861742d74696c652d6461726b5f61346265353132653731393562366237333364393131306234303866303735642e706e67");
+  background-size: 30%;
+  background-position: center;
+  opacity: 0.1; /* Solo la imagen tendrá esta transparencia */
+  z-index: 0; /* Se ubica detrás del contenido */
+}
+
+.chat__messages_wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+.chat__messages {
+  scrollbar-width: 10px;
+  scrollbar-color: rgba(136, 136, 136, 0.8) transparent;
+  border-radius: 20px; /* Bordes redondeados en la pista */
+}
+
+/* Para navegadores WebKit (Chrome, Safari, Edge) */
+.chat__messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat__messages::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px; /* Bordes redondeados en la pista */
+}
+
+.chat__messages::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.8);
+  border: 1px solid rgba(204, 204, 204, 0.8);
+  border-radius: 20px; /* Bordes redondeados en la pista */
+}
+
+.chat__messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.8);
+}
+
+.message {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  display: inline-block;
+  padding: 0.7rem;
+  position: relative;
+  word-wrap: break-word;
+  position: relative;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.chat__messages {
+  overflow-y: scroll;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.isUser {
+  margin-right: 0;
+  background-color: var(--message-color);
+
+  margin-left: auto;
+  align-self: flex-end; /* Alinea el mensaje a la derecha */
+  margin-left: auto; /* Empuja el mensaje a la derecha */
+}
+
+.chat__form {
+  background-color: #313131;
+  height: calc(10%);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.chat__form form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.chat__form form textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  background-color: var(--input-primary-color);
+  width: 80%;
+  /* height: 3rem; */
+  overflow: hidden;
+  resize: none;
+}
+
+.chat__form form i {
+  font-size: 2rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: ease 0.5s all;
+}
+
+.chat__form form i:hover {
+  color: var(--third-color);
+  transition: ease 0.5s all;
+}
+
+.chat__form form button {
+  font-size: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease 0.5s all;
+  box-sizing: border-box;
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
+  border: none;
+}
+
+.chat__form form button:hover {
+  border: none;
+  color: var(--third-color);
+  transition: ease 0.5s all;
+}

@@ -1,0 +1,86 @@
+.SearchUser{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.SearchUser > form {
+    border: 0;
+    background-color: #2b2b2b;
+
+}
+
+.SearchUser > form input {
+    /* margin: 0 auto; */
+    background-color: #2b2b2b;
+    width: 100%;
+    display: block;
+    padding: 1rem; 
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.usersFound{
+    text-decoration: none;
+    list-style: none;
+    background-color: #2b2b2b;
+    padding: 0;
+    margin: 0;
+}
+
+.usersFound {
+    max-height: 20rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+    border-radius: 0.5rem;
+}
+
+.Search__Form{
+    display: flex;
+}
+
+.Search__Form i {
+    width: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.usersFound li{
+display: flex;
+align-items: center;
+padding: 1rem 1rem;
+gap: 1rem;
+background-color: #2b2b2b;
+
+cursor: pointer;
+}
+
+
+.usersFound li:hover{
+    background-color: var(--selected);
+
+    transition: ease 0.3s all;
+}
+
+.usersFound li img {
+    height: 3rem;
+    width: 3rem;
+    object-fit: cover;
+    border-radius: 50%
+}
+
+.textUserfound {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    color: #d1d1d185;
+    user-select: none;
+}

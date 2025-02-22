@@ -1,0 +1,51 @@
+.userSetting{
+    
+}
+
+.formUser{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formUser input {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.dragZone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagePreview {
+    box-sizing: border-box;
+    width: 10rem;
+    height: 10rem;
+}
+
+.imagePreview img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+
+.imagePreview img:hover{
+    opacity: 0.8;
+}
+
+.imagePreview:hover{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #3636368f;
+    /* border: 1px solid #ccc; */
+    box-sizing: border-box;
+}

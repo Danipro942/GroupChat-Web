@@ -1,0 +1,162 @@
+.chatContainer {
+  width: 30%;
+  /* padding: .5rem; */
+}
+.chatList {
+  padding: 0 0.5rem;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.chat {
+  list-style-type: none;
+  padding: 0.5rem 1rem;
+  transition: ease 0.3s all;
+  border-radius: 1rem;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 0.5rem;
+}
+
+.chat:hover {
+  background-color: #42424281;
+  transition: ease 0.3s all;
+}
+
+.chat__active{
+  background-color: #42424281;
+
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  background-color: #313131;
+  height: 10%;
+  box-sizing: border-box;
+}
+
+.userInfo span {
+  font-size: 1.5rem;
+  user-select: none;
+  font-weight: 600;
+  /* background-color: #313131; */
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.user img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+
+}
+
+.user span {
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 6rem;
+}
+
+.user button {
+  font-size: 0.7rem;
+}
+
+.user span button {
+  font-size: 0.8rem;
+  padding: 0.3rem;
+}
+
+.Chatsections {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.profileImg img {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 100rem;
+  box-sizing: border-box;
+  object-fit: cover;
+
+}
+
+.information P {
+  margin: 0;
+  font-weight: 600;
+}
+
+.information span {
+  font-size: 0.8rem;
+  text-align: left;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 9rem;
+  white-space: nowrap;
+
+}
+
+@media (max-width: 1878px) {
+  .userInfo {
+    padding: 0.5rem;
+  }
+
+  .userInfo span {
+    font-size: 1rem;
+    user-select: none;
+    font-weight: 600;
+
+    /* min-width: 12px; */
+    /* background-color: #313131; */
+  }
+}
+
+.searchUser{
+  width: 100%;
+  padding: .3rem;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.searchUser input {
+  background-color: var(--primary-color);
+  width: 85%;
+  display: block;
+  padding: .8rem 0; 
+}
+
+.searchUser i {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  cursor: pointer;
+}
+
+.searchUser i:hover{
+  color: #ffffffc4;
+}
+

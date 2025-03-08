@@ -50,7 +50,6 @@ const ChatContainer = ({}: Props) => {
       );
       if (findChat) {
         findChat.lastMessage = data.message;
-        console.log("findChat: ", findChat);
         setChats([...chats!]);
       }
     };
@@ -61,7 +60,7 @@ const ChatContainer = ({}: Props) => {
     return () => {
       socket?.off("lastMessage", messageListener);
     };
-  }, [socket]);
+  }, [socket, chats]);
 
   const closeSesion = () => {
     deleteSession();
@@ -74,7 +73,6 @@ const ChatContainer = ({}: Props) => {
 
       try {
         const response = await apiClient.get<{ chats: ChatType[] }>(URL);
-        console.log(response.data);
         setChats(response.data.chats);
       } catch (error) {
         console.log("Something went wrong loading Chats ", error);

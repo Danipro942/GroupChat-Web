@@ -7,6 +7,7 @@ export type UserType = {
     email: string;
     _id: string;
     profilePicture: string
+    createdAt: string;
   };
 
   export interface ErrorResponse {

@@ -23,10 +23,8 @@ const Login = ({ isAuth }: Props) => {
   });
 
   const onSubmit = (data: LoginForm) => {
-    console.log(data);
     mutate(data, {
       onSuccess: async (data) => {
-        console.log(data);
         setSession(data.token);
         await isAuth();
         navigate("/");

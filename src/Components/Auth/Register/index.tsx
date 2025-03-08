@@ -72,13 +72,13 @@ const Register = ({}: Props) => {
           {...register("email")}
         />
         <input
-          type="text"
+          type="password"
           placeholder="Password"
           className={errors.password ? "errorField" : ""}
           {...register("password")}
         />
         <input
-          type="text"
+          type="password"
           placeholder="Repeat Password"
           className={errors.confirmPassword ? "errorField" : ""}
           {...register("confirmPassword")}

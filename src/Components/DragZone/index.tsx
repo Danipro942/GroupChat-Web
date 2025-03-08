@@ -21,7 +21,6 @@ const DragZone = ({ file, setFile }: Props) => {
         ),
       ]);
     }
-    // console.log(rejectedFiles);
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({

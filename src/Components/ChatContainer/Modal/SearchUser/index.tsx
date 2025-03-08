@@ -43,7 +43,6 @@ const SearchUser = ({ handleModel }: Props) => {
       const response = await apiClient.put<{ chat: ChatType }>(URL, {
         username: userChat.username,
       });
-      console.log(response.data);
       const ifChatExisted = chats?.find(
         (chat) => chat._id === response.data.chat._id
       );

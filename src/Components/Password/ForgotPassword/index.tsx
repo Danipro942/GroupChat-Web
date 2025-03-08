@@ -13,7 +13,6 @@ const ForgotPassword = ({}: Props) => {
     e.preventDefault();
     const URL = `/auth/resetPassword`;
     try {
-      console.log(email);
       const response = await apiClient.put(URL, { email: email });
       toast.success(response.data.message);
       navigate("/auth/login");

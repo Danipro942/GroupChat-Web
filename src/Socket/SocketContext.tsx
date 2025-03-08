@@ -23,7 +23,7 @@ const SocketProvider = ({ children }: Props) => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const newSocket = io("danisthchat-production.up.railway.app");
+    const newSocket = io(`${import.meta.env.VITE_BACKEND_URL}`);
     setSocket(newSocket);
     // Limpieza cuando se desmonte el proveedor
     return () => {

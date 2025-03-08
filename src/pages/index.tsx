@@ -34,7 +34,6 @@ const AppRouter = () => {
         const decodeJWT = jwtDecode<UserType>(session);
         setUser(decodeJWT);
         // Emit new user
-        console.log(socket);
 
         if (socket) {
           socket.emit("login", decodeJWT.username);

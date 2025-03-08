@@ -17,13 +17,10 @@ function App() {
         formData.append("image", file);
       });
 
-      console.log(file);
-      const result = await axios.post(
+      await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/create-image`,
         formData
       );
-
-      console.log(result);
     } catch (error) {
       console.log(error);
     }

@@ -15,9 +15,7 @@ const Chat = ({ userFetch, onSelected, chat }: Props) => {
 
   if (!user) return null;
 
-  console.log(userFetch);
   const filterUser = userFetch.find((e) => e.username !== user.username);
-  console.log(filterUser);
 
   return (
     <li

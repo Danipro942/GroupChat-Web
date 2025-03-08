@@ -12,7 +12,6 @@ type RegisterUser = {
 
 const postUserRegister = async (dataUser: RegisterUser) => {
     const URL = `${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`
-    console.log(dataUser)
     const response = await axios.post<UserToken>(URL, dataUser)
     return response.data
 }

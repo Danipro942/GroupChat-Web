@@ -41,7 +41,7 @@ const SettingUserModal = ({}: Props) => {
 
   const ChangeProfilePicture = async () => {
     setIsLoading(true);
-    console.log(formData);
+
     // Si solo se espera un archivo, usamos el primero del array.
     if (file.length > 0) {
       formData.append("image", file[0]);
@@ -50,11 +50,6 @@ const SettingUserModal = ({}: Props) => {
       return;
     }
 
-    // Para depurar: iteramos sobre los pares clave/valor de formData.
-    for (const [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-    console.log(formData, file[0]);
     const token = getSession();
 
     try {
@@ -68,7 +63,6 @@ const SettingUserModal = ({}: Props) => {
           },
         }
       );
-      console.log(result.data.imageUrl);
       setSession(result.data.token);
       setIsLoading(false);
 
@@ -79,8 +73,6 @@ const SettingUserModal = ({}: Props) => {
         });
       }
       toast.success("Your Profile Picture has been changed Successfully");
-
-      console.log(result);
     } catch (error) {
       console.log(error);
       setIsLoading(false);
@@ -94,7 +86,6 @@ const SettingUserModal = ({}: Props) => {
         newUsername,
       });
       if (response.data) {
-        console.log(response);
         toast.success(
           "Your Username has been changed Successfully, The website will reload in 5 seconds"
         );
@@ -111,9 +102,7 @@ const SettingUserModal = ({}: Props) => {
       const response = await apiClient.put(URL, {
         email,
       });
-      console.log(response);
       if (response.data) {
-        console.log(response);
         toast.success("Request for new password sent, please check your email");
       }
     } catch (error) {

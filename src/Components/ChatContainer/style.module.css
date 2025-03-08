@@ -16,7 +16,7 @@
   list-style-type: none;
   padding: 0.5rem 1rem;
   transition: ease 0.3s all;
-  border-radius: 1rem;
+  border-radius: .8rem;
   cursor: pointer;
   user-select: none;
   margin-bottom: 0.5rem;

@@ -20,7 +20,9 @@ const UserSelectedModal = ({ userSelected }: Props) => {
       <div className={style.createdAt}>
         <h2>Created at:</h2>
         <span>
-          {userSelected.createdAt ? userSelected.createdAt : "< 2/1/2025"}
+          {userSelected.createdAt
+            ? new Date(userSelected.createdAt).toLocaleDateString()
+            : "< 2/1/2025"}
         </span>
       </div>
     </div>
